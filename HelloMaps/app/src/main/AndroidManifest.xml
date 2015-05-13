@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mmbuw.hellomaps" >
 
-    <premission
+    <permission
         android:name="com.example.mmbuw.hellomaps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature"
         />

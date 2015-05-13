@@ -24,7 +24,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
-    EditText message;
+    EditText mess;
 
 
 
@@ -33,7 +33,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        message = (EditText) findViewById(R.id.content);
+        mess = (EditText) findViewById(R.id.content);
 
         setUpMapIfNeeded();
 
@@ -44,7 +44,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
             @Override
             public void onMapLongClick(LatLng latLng){
 
-                mMap.addMarker(new MarkerOptions().position(latLng).title(message.getText().toString()));
+                mMap.addMarker(new MarkerOptions().position(latLng).title(mess.getText().toString()));
 
                 CircleOptions circle = new CircleOptions();
                 circle.center(latLng).fillColor(0x40ff0000).radius(100000).strokeColor(Color.GREEN).strokeWidth(3);
@@ -52,7 +52,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
 
                 Set locContent = new HashSet();
 
-                locContent.add(message.getText().toString());
+                locContent.add(mess.getText().toString());
 
                 SharedPreferences prefs = getSharedPreferences("Prefs",Activity.MODE_PRIVATE);
 
